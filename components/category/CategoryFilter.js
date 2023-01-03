@@ -3,7 +3,7 @@ import React from 'react'
 export default function CategoryFilter({ categories }) {
   return (
     <section id="category-filter">
-        <div className="flex w-full px-wrapper xl:px-0 justify-between items-center gap-1">
+        <div className="flex w-full px-wrapper xl:px-0 justify-between items-center gap-6">
             <div className="flex space-x-3 overflow-x-auto scrollbar-hide items-center">
                 <div key={'全部'} className="px-3 py-2 rounded-full cursor-pointer" style={{backgroundColor: '#909090'}}>
                     <p className='text-white text-sm font-bold break-keep'>全部</p>

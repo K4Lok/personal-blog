@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 
-import Navbar from '../components/Navbar'
 import Introduction from '../components/Introduction'
 import CategoryFilter from '../components/category/CategoryFilter'
 import PostCards from '../components/post/PostCards'
@@ -19,10 +18,6 @@ export default function Home({ categories, posts }) {
         <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <header>
-        <Navbar />
-      </header>
 
       <main className='max-w-container mx-auto space-y-4'>
         <Introduction />
