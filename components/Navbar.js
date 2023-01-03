@@ -8,15 +8,15 @@ export default function Navbar() {
 
 	let prevNavY = 0;
 
-	const scrollHandler = () => {		
-		if (window.scrollY > prevNavY) {
+	const scrollHandler = () => {
+		if (window.scrollY < navRef.current.clientHeight * 3 || window.scrollY < prevNavY) {
 			prevNavY = window.scrollY;
-			setShowNav(false);
+			setShowNav(true);
 			return;
 		}
 
 		prevNavY = window.scrollY;
-		setShowNav(true);
+		setShowNav(false);
 	}
 
 	useEffect(() => {
@@ -26,8 +26,8 @@ export default function Navbar() {
 	}, [])
 
 	return (
-			<div ref={navRef} className={`fixed top-0 w-full p-wrapper backdrop-blur-sm z-50 transition duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
-				<Link href={'/'}><Image className='active:scale-[101%]' src={'/icon.svg'} width={200} height={50} /></Link>
-			</div>
+		<div ref={navRef} className={`fixed top-0 w-full p-wrapper backdrop-blur-sm z-50 transition duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
+			<Link href={'/'}><Image className='active:scale-[101%]' src={'/icon.svg'} alt={'icon'} width={200} height={50} /></Link>
+		</div>
 	)
 }
