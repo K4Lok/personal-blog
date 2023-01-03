@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        postCard: '#F8F8F8',
+        cardDate: '#32A8EB',
+      },
       padding: {
         'wrapper': '18px',
         'navbar': '80px',

@@ -4,6 +4,7 @@ import { Inter } from '@next/font/google'
 import Navbar from '../components/Navbar'
 import Introduction from '../components/Introduction'
 import CategoryFilter from '../components/category/CategoryFilter'
+import PostCards from '../components/post/PostCards'
 
 import { getCategories, getPosts } from '../services'
 
@@ -26,7 +27,7 @@ export default function Home({ categories, posts }) {
       <main className='max-w-container mx-auto'>
         <Introduction />
         <CategoryFilter categories={categories} />
-        {/* <PostCards /> */}
+        <PostCards posts={posts}/>
       </main>
     </>
   )

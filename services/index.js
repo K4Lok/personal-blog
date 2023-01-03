@@ -11,6 +11,10 @@ export const getPosts = async () => {
 				slug
 				categories {
 					name
+					slug
+					color {
+						hex
+					}
 				}
 				content {
 					html
