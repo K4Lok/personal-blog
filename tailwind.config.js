@@ -7,7 +7,11 @@ module.exports = {
   theme: {
     extend: {
       padding: {
-        'wrapper': '18px'
+        'wrapper': '18px',
+        'navbar': '80px',
+      },
+      maxWidth: {
+        'container': '1080px',
       }
     },
   },

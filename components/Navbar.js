@@ -26,8 +26,10 @@ export default function Navbar() {
 	}, [])
 
 	return (
-		<div ref={navRef} className={`fixed top-0 w-full p-wrapper backdrop-blur-sm z-50 transition duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
-			<Link href={'/'}><Image className='active:scale-[101%]' src={'/icon.svg'} alt={'icon'} width={200} height={50} /></Link>
+		<div ref={navRef} className={`fixed top-0 w-full py-wrapper backdrop-blur-sm z-50 transition duration-300 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
+			<div className="max-w-container mx-auto px-wrapper xl:px-0">
+				<Link href={'/'}><Image className='active:scale-[101%]' src={'/icon.svg'} alt={'icon'} width={200} height={50} /></Link>
+			</div>
 		</div>
 	)
 }
