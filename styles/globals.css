@@ -10,3 +10,8 @@
         font-family: 'Noto Sans TC', sans-serif;
     }
 }
+
+.markdown {
+    @apply 
+        prose-blockquote:not-italic prose-blockquote:text-gray-500
+}

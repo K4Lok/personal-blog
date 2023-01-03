@@ -36,7 +36,7 @@ export default function Introduction() {
 
 				{/* Right Part */}
 				<div className="absolute right-4 md:hidden grow max-w-[300px] -z-10">
-					<Image className='md:w-full' src={'/kalok-figure.png'} alt={'kalok figure'} width={120} height={400}/>
+					<Image priority className='md:w-full' src={'/kalok-figure.png'} alt={'kalok figure'} width={120} height={400}/>
 				</div>
 			</div>
 		</section>
