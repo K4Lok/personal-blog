@@ -3,10 +3,13 @@ import { Inter } from '@next/font/google'
 
 import Navbar from '../components/Navbar'
 import Introduction from '../components/Introduction'
+import CategoryFilter from '../components/category/CategoryFilter'
+
+import { getCategories, getPosts } from '../services'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home({ categories, posts }) {
   return (
     <>
       <Head>
@@ -22,10 +25,21 @@ export default function Home() {
 
       <main className='max-w-container mx-auto'>
         <Introduction />
-        <div className="h-screen flex justify-center items-center">
-          2
-        </div>
+        <CategoryFilter categories={categories} />
+        {/* <PostCards /> */}
       </main>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const categories = (await getCategories()) || [];
+  const posts = (await getPosts()) || [];
+
+  return {
+    props: {
+      categories,
+      posts,
+    }
+  }
 }
