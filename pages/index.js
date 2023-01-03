@@ -24,7 +24,7 @@ export default function Home({ categories, posts }) {
         <Navbar />
       </header>
 
-      <main className='max-w-container mx-auto'>
+      <main className='max-w-container mx-auto space-y-4'>
         <Introduction />
         <CategoryFilter categories={categories} />
         <PostCards posts={posts}/>

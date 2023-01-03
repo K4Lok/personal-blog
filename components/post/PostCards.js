@@ -9,7 +9,7 @@ export default function PostCards({ posts }) {
                 return (
                 <div key={index} className="flex flex-col p-3  bg-postCard rounded-lg shadow-md">
                     <p className='text-cardDate text-xs'>{date}</p>
-                    <h3 className='pt-1 text-lg font-bold leading-6'>{post.title}</h3>
+                    <h3 className='pt-1 text-lg font-bold leading-6 line-clamp-2'>{post.title}</h3>
                     <div className="pt-2 flex space-x-2 items-center">
                         {post.categories.map(category => (
                             <div key={category.slug} className="p-[6px] rounded-md cursor-pointer" style={{backgroundColor: category.color.hex}}>
