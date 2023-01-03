@@ -1,9 +1,21 @@
+import Head from 'next/head'
 import Image from "next/image"
 
-import { getPostDetails, getPosts } from "../../services";
+import Navbar from "../../components/Navbar"
+
+import { getPostDetails, getPosts } from "../../services"
 
 export default function PostDetailPage({ post }) {
-    return (
+    return (<>
+        <Head>
+            <title>{`KaLok's Blog | ${post.title}`}</title>
+            <meta name="description" content="Personal Blog Page by KaLok" />
+            <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
+            <link rel="icon" href="/favicon.ico" />
+        </Head>
+
+        <Navbar />
+
         <div className='pt-navbar'>
             <Image priority src={post.bannerImage.url} alt={post.slug} width={500} height={400}
             className="w-full h-1/5"/>
@@ -13,7 +25,7 @@ export default function PostDetailPage({ post }) {
                 <div className="pt-4 prose markdown" dangerouslySetInnerHTML={{__html: post.content.html}}></div>
             </div>
         </div>
-    )
+    </>)
 }
 
 export async function getStaticProps({ params }) {

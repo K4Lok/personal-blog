@@ -9,7 +9,7 @@ export default function Navbar() {
 	let prevNavY = 0;
 
 	const scrollHandler = () => {
-		if (window.scrollY < navRef.current.clientHeight / 2 || window.scrollY < prevNavY) {
+		if (window.scrollY < navRef.current.clientHeight || window.scrollY < prevNavY) {
 			prevNavY = window.scrollY;
 			setShowNav(true);
 			return;
