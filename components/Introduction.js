@@ -19,7 +19,7 @@ export default function Introduction() {
 	})
 
 	return (
-		<section id="introduction" className="pt-navbar px-wrapper xl:px-0 overflow-x-hidden">
+		<section id="introduction" className="px-wrapper xl:px-0 overflow-x-hidden">
 			<div className="pt-12 pb-16 flex gap-8 justify-between md:justify-center">
 				{/* Left Part */}
 				<div className="space-y-4 md:text-center">

@@ -3,8 +3,8 @@ import Link from "next/link"
 export default function PostCards({ posts }) {
   return (
     <section id="posts">
-        <div className="w-full px-wrapper xl:px-0 space-y-3">
-            <ul>
+        <div className="w-full px-wrapper xl:px-0">
+            <ul className="flex flex-col space-y-3">
                 {posts.map((post, index) => { 
                     const date = new Intl.DateTimeFormat('zh-MO', { dateStyle: 'long', timeZone: 'Asia/Macau' }).format(new Date(post.createdAt))
                     return (

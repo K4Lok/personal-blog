@@ -16,9 +16,9 @@ export default function PostDetailPage({ post }) {
 
         <Navbar />
 
-        <div className='pt-navbar'>
+        <div className='pt-navbar pb-navbar'>
             <Image priority src={post.bannerImage.url} alt={post.slug} width={500} height={400}
-            className="w-full h-1/5"/>
+            className="w-full h-1/5 bg-slate-100"/>
             <div className="px-wrapper xl:px-0 pt-4">
                 <p className="text-cardDate">{post.date}</p>
                 <h1 className="text-2xl font-bold">{post.title}</h1>
