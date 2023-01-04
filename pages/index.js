@@ -1,3 +1,4 @@
+import {useState, useEffec} from 'react'
 import Head from 'next/head'
 
 import Navbar from '../components/Navbar'
@@ -8,6 +9,31 @@ import PostCards from '../components/post/PostCards'
 import { getCategories, getPosts } from '../services'
 
 export default function Home({ categories, posts }) {
+  const [filteredPosts, setFilteredPosts] = useState(posts);
+  const [isLatestOrder, setIsLatestOrder] = useState(true);
+
+  const categoryHandler = (selectedCategory) => {
+    if (selectedCategory === '全部') {
+      setFilteredPosts(posts)
+      return
+    }
+
+    let newFilteredPosts = posts.filter(post => post.categories.some(category => category.slug === selectedCategory))
+
+    if (!isLatestOrder) newFilteredPosts = newFilteredPosts.reverse()
+
+    setFilteredPosts(newFilteredPosts)
+  }
+
+  const orderHandler = () => {
+    setIsLatestOrder(prev => !prev)
+    setFilteredPosts(prev => [...prev].reverse())
+  }
+
+  // useEffec(() => {
+    
+  // }, []);
+
   return (
     <>
       <Head>
@@ -21,8 +47,8 @@ export default function Home({ categories, posts }) {
 
       <main className='max-w-container mx-auto space-y-4 pt-navbar pb-navbar'>
         <Introduction />
-        <CategoryFilter categories={categories} />
-        <PostCards posts={posts}/>
+        <CategoryFilter categories={categories} isLatestOrder={isLatestOrder} categoryHandler={categoryHandler} orderHandler={orderHandler}/>
+        <PostCards posts={filteredPosts}/>
       </main>
     </>
   )
