@@ -16,7 +16,32 @@ module.exports = {
       },
       maxWidth: {
         'container': '1080px',
-      }
+      },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: {
+            code: {
+              color: theme('colors.red.400'),
+              backgroundColor: theme('colors.blue.100'),
+              borderRadius: theme('borderRadius.md'),
+              paddingTop: theme('padding[0.5]'),
+              paddingRight: theme('padding[1.5]'),
+              paddingBottom: theme('padding[0.5]'),
+              paddingLeft: theme('padding[1.5]'),
+            },
+            'code::before': {
+              content: 'normal',
+            },
+            'code::after': {
+              content: 'normal',
+            },
+            a: {
+              color: theme('colors.blue.400'),
+              fontWeight: '600'
+            }
+          }
+        }
+      }),
     },
   },
   plugins: [
