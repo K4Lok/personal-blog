@@ -29,7 +29,7 @@ export default function Navbar() {
         <header>
 			<div ref={navRef} className={`fixed top-0 w-full py-wrapper bg-white/90 z-50 transition duration-500 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
 				<div className="max-w-container mx-auto px-wrapper xl:px-0">
-					<Link href={'/'}><Image className='active:scale-[101%]' src={'/icon.svg'} alt={'icon'} width={200} height={50} /></Link>
+					<Link href={'/'}><Image priority className='active:scale-[101%]' src={'/icon.svg'} alt={'icon'} width={200} height={50} /></Link>
 				</div>
 			</div>
 		</header>
