@@ -13,12 +13,16 @@ export default function Home({ categories, posts }) {
   const [isLatestOrder, setIsLatestOrder] = useState(true);
 
   const categoryHandler = (selectedCategory) => {
+    let newFilteredPosts = [...posts]
+
     if (selectedCategory === '全部') {
-      setFilteredPosts(posts)
+      if (!isLatestOrder) newFilteredPosts = newFilteredPosts.reverse()
+
+      setFilteredPosts(newFilteredPosts)
       return
     }
 
-    let newFilteredPosts = posts.filter(post => post.categories.some(category => category.slug === selectedCategory))
+    newFilteredPosts = posts.filter(post => post.categories.some(category => category.slug === selectedCategory))
 
     if (!isLatestOrder) newFilteredPosts = newFilteredPosts.reverse()
 
