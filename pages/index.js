@@ -23,7 +23,6 @@ export default function Home({ categories, posts }) {
         <Introduction />
         <CategoryFilter categories={categories} />
         <PostCards posts={posts}/>
-        <div className="h-screen"></div>
       </main>
     </>
   )
