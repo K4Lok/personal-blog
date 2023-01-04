@@ -16,13 +16,13 @@ export default function PostDetailPage({ post }) {
 
         <Navbar />
 
-        <div className='pt-navbar pb-navbar'>
+        <div className='pt-navbar pb-navbar max-w-container mx-auto'>
             <Image priority src={post.bannerImage.url} alt={post.slug} width={500} height={400}
-            className="w-full h-1/5 bg-slate-100"/>
+            className="w-full h-1/5 bg-slate-100 max-h-[500px] object-cover"/>
             <div className="px-wrapper xl:px-0 pt-4">
                 <p className="text-cardDate">{post.date}</p>
                 <h1 className="text-2xl font-bold">{post.title}</h1>
-                <div className="pt-4 prose markdown" dangerouslySetInnerHTML={{__html: post.content.html}}></div>
+                <div className="pt-4 prose md:prose-xl markdown" dangerouslySetInnerHTML={{__html: post.content.html}}></div>
             </div>
         </div>
     </>)
