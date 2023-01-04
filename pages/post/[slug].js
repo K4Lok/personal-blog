@@ -17,8 +17,11 @@ export default function PostDetailPage({ post }) {
         <Navbar />
 
         <div className='pt-navbar pb-navbar max-w-container mx-auto'>
-            <Image priority src={post.bannerImage.url} alt={post.slug} width={500} height={400}
-            className="w-full h-1/5 bg-slate-100 max-h-[500px] object-cover"/>
+            <div className="relative">
+                <Image priority src={post.bannerImage.url} alt={post.slug} width={500} height={400}
+                className="w-full h-1/5 bg-slate-100 max-h-[500px] object-cover"/>
+                <a className='absolute text-xs font-bold text-white opacity-60 bottom-2 right-0 pr-wrapper underline decoration-2' href="http://www.freepik.com">Designed by Freepik</a>
+            </div>
             <div className="px-wrapper xl:px-0 pt-4">
                 <p className="text-cardDate">{post.date}</p>
                 <h1 className="text-2xl font-bold">{post.title}</h1>
