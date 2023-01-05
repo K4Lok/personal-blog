@@ -63,8 +63,10 @@ export default function Home({ categories, posts, imageUrl, quote }) {
           <aside className='hidden lg:block basis-80'>
             <div className="w-full flex flex-col space-y-4">
               {/* Quote Card */}
-              <div className="relative w-full h-80 rounded-2xl overflow-hidden">
-                <Image className='bg-slate-200 brightness-[40%]' src={imageUrl} width={80 * 4} height={80 * 4}/>
+              <div className="relative w-full h-80 rounded-lg overflow-hidden">
+                {/* Styles: Top bar */}
+                <div className="absolute top-0 z-10 h-8 w-full bg-blue-200/60 backdrop-blur-lg" />
+                <Image className='bg-slate-200 brightness-[60%]' src={imageUrl} width={80 * 4} height={80 * 4}/>
                 <div className="absolute inset-0 flex flex-col justify-center items-center">
                   <div className="w-2/3">
                     <h4 className='text-xl font-mono font-bold text-white tracking-widest'>{quote.content}</h4>
@@ -72,9 +74,16 @@ export default function Home({ categories, posts, imageUrl, quote }) {
                   </div>
                 </div>
               </div>
-              <div className="relative w-full h-80 rounded-2xl overflow-hidden">
-                <Image className='bg-slate-200 ' src={'/quote_fallback2.webp'} width={80 * 4} height={80 * 4}/>
-              </div>
+              {/* <div className="relative w-full h-80 rounded-lg overflow-hidden">
+                <div className="absolute top-0 z-10 h-8 w-full bg-blue-200/60 backdrop-blur-lg" />
+                <div className='bg-zinc-200 w-80 h-80' />
+                <div className="absolute inset-0 flex flex-col justify-center items-center">
+                  <div className="w-2/3">
+                    <h4 className='text-xl font-mono font-bold text-white tracking-widest'>{quote.content}</h4>
+                    <p className='text-end text-xl font-mono font-bold text-white'>- {quote.author}</p>
+                  </div>
+                </div>
+              </div> */}
             </div>
           </aside>
         </div>
