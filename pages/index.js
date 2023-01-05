@@ -65,12 +65,14 @@ export default function Home({ categories, posts, imageUrl, quote }) {
               {/* Quote Card */}
               <div className="relative w-full h-80 rounded-lg overflow-hidden">
                 {/* Styles: Top bar */}
-                <div className="absolute top-0 z-10 h-8 w-full bg-blue-200/60 backdrop-blur-lg" />
+                <div className="absolute top-0 z-10 w-full bg-blue-200/60 backdrop-blur-lg flex">
+                  <p className='px-4 py-2 text-lg font-bold text-white select-none'>每日雞湯</p>
+                </div>
                 <Image className='bg-slate-200 brightness-[60%]' src={imageUrl} width={80 * 4} height={80 * 4}/>
                 <div className="absolute inset-0 flex flex-col justify-center items-center">
-                  <div className="w-2/3">
+                  <div className="w-4/5">
                     <h4 className='text-xl font-mono font-bold text-white tracking-widest'>{quote.content}</h4>
-                    <p className='text-end text-xl font-mono font-bold text-white'>- {quote.author}</p>
+                    <p className='text-end font-mono font-bold text-white'>- {quote.author}</p>
                   </div>
                 </div>
               </div>
