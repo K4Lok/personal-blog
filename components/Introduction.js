@@ -24,7 +24,6 @@ export default function Introduction() {
 				{/* Left Part */}
 				<div className="space-y-4 md:text-center">
 					<h2 className='text-4xl font-bold md:text-5xl'>
-						{/* <span className="font-thin">{"<こんにちは />"}</span> */}
 						<span className="font-thin md:font-bold">{text}</span>
 						<Cursor cursorColor="#32A8EB"/>
 					</h2>

@@ -2,8 +2,8 @@ import Link from "next/link"
 
 export default function PostCard({ title, slug, categories, date}) {
     return (
-        <Link href={`/post/${slug}`}>
-            <li className="flex flex-col p-3  bg-postCard rounded-lg shadow-md">
+        <li className="flex flex-col p-3  bg-postCard rounded-lg shadow-md">
+            <Link href={`/post/${slug}`}>
                 <p className='text-cardDate text-xs'>{date}</p>
                 <h3 className='pt-1 text-lg font-bold leading-6 line-clamp-2'>{title}</h3>
                 <div className="pt-2 flex space-x-2 items-center">
@@ -13,7 +13,7 @@ export default function PostCard({ title, slug, categories, date}) {
                         </div>
                     ))}
                 </div>
-            </li>
-        </Link>
+            </Link>
+        </li>
     )
 }

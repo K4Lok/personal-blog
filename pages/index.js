@@ -45,7 +45,7 @@ export default function Home({ categories, posts, imageUrl, quote }) {
       <Head>
         <title>KaLok's Blog</title>
         <meta name="description" content="Personal Blog Page by KaLok" />
-        <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
