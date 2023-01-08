@@ -20,7 +20,7 @@ export default function PostDetailPage({ post }) {
             <div className="relative">
                 <Image priority src={post.bannerImage.url} alt={post.slug} width={1280} height={600}
                 className="w-full h-1/5 bg-slate-100 max-h-[500px] object-cover"/>
-                <a className='absolute text-xs font-bold text-white opacity-60 bottom-2 right-0 pr-wrapper underline decoration-2' href="http://www.freepik.com">Designed by Freepik</a>
+                { post.isLicenseImage && <a className='absolute text-xs font-bold text-white opacity-60 bottom-2 right-0 pr-wrapper underline decoration-2' href="http://www.freepik.com">Designed by Freepik</a>}
             </div>
             <div className="pt-4 px-wrapper xl:px-0">
                 <p className="text-cardDate">{post.date}</p>

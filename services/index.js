@@ -69,6 +69,7 @@ export const getPostDetails = async (slug) => {
 				bannerImage {
 					url
 				}
+				isLicenseImage
 			}
 		}
 	`
