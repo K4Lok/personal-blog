@@ -17,3 +17,7 @@
     @apply 
         prose-blockquote:not-italic prose-blockquote:text-gray-500
 }
+
+.post-card {
+    @apply bg-postCard rounded-lg shadow-md border md:border-2 border-gray-100 active:border-cardDate md:hover:border-cardDate duration-150 md:duration-500;
+}

@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function PostCard({ title, slug, categories, date}) {
     return (
-        <li className="flex flex-col p-3  bg-postCard rounded-lg shadow-md">
+        <li className="flex flex-col p-3 post-card">
             <Link href={`/post/${slug}`}>
                 <p className='text-cardDate text-xs'>{date}</p>
                 <h3 className='pt-1 text-lg font-bold leading-6 line-clamp-2'>{title}</h3>
