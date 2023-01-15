@@ -38,7 +38,8 @@ module.exports = {
             },
             a: {
               color: theme('colors.blue.400'),
-              fontWeight: '600'
+              fontWeight: '600',
+              wordBreak: 'break-all'
             }
           }
         }
