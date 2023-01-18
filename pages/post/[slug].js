@@ -8,8 +8,7 @@ import { getPostDetails, getPosts } from "../../services"
 export default function PostDetailPage({ post }) {
     return (<>
         <Head>
-            <title>{`KaLok's Blog | ${post.title}`}</title>
-            <meta name="description" content="Personal Blog Page by KaLok" />
+            <title>{`${post.title} | KaLok's Blog`}</title>
             <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
             <link rel="icon" href="/favicon.ico" />
         </Head>

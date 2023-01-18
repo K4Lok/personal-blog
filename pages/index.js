@@ -43,8 +43,8 @@ export default function Home({ categories, posts, imageUrl, quote }) {
   return (
     <>
       <Head>
-        <title>KaLok's Blog</title>
-        <meta name="description" content="Personal Blog Page by KaLok" />
+        <title>KaLok's Time Chamber - Personal Blog</title>
+        <meta name="description" content="Welcome to the personal blog of Sam KaLok, a passionate web developer and tech enthusiast, from front-end to back-end development..." />
         <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
