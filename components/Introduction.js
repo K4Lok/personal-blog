@@ -20,7 +20,7 @@ export default function Introduction({description}) {
 
 	return (
 		<section id="introduction" className="px-wrapper xl:px-0 overflow-x-hidden">
-			<div className="pt-12 pb-16 flex gap-8 justify-between md:justify-center">
+			<div className="pt-12 pb-16 lg:py-32 flex gap-8 justify-between md:justify-center">
 				{/* Left Part */}
 				<div className="space-y-4 md:text-center">
 					<h2 className='text-4xl font-bold md:text-5xl'>
