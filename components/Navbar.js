@@ -44,7 +44,7 @@ export default function Navbar() {
 					</Link>
 					{/* Right Menu */}
 					<div className="flex justify-between space-x-4 lg:space-x-4 items-center">
-							<Link href={'https://github.com/k4lok'} target={'_blank'}>
+							<Link className='hidden md:block' href={'https://github.com/k4lok'} target={'_blank'}>
 								<Image priority className='active:scale-[101%] hover:brightness-110' src={'/github.svg'} alt={'switch language'} width={40} height={40} />
 							</Link>
 							{
