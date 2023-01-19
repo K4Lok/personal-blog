@@ -15,7 +15,7 @@ import { TranslationContext } from '../context/TranslationContext'
 export default function Home({ categories, posts, imageUrl, quote, locale }) {
   const [filteredPosts, setFilteredPosts] = useState(posts);
   const [isLatestOrder, setIsLatestOrder] = useState(true);
-
+  
   const t = useTranslations('home')
 
   const categoryHandler = (selectedCategory) => {
