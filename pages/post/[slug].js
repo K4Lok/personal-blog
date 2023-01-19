@@ -32,7 +32,7 @@ export default function PostDetailPage({ post }) {
 
 export async function getStaticProps({ params, locale }) {
     const post = await getPostDetails(params.slug, locale)
-    const date =  new Intl.DateTimeFormat('zh-MO', { dateStyle: 'full', timeStyle: 'short', timeZone: 'Asia/Macau' }).format(new Date(post.createdAt))
+    const date =  new Intl.DateTimeFormat(locale == 'zh' ? 'zh-mo' : locale, { dateStyle: 'full', timeStyle: 'short', timeZone: 'Asia/Macau' }).format(new Date(post.createdAt))
 
     if (!post.bannerImage) {
         post.bannerImage= {

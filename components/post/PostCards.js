@@ -1,7 +1,7 @@
 import Link from "next/link"
 import PostCard from "./PostCard"
 
-export default function PostCards({ posts }) {
+export default function PostCards({ posts, locale }) {
   return (
     <section id="posts">
         <div className="w-full">

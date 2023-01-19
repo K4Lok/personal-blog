@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
-export default function Introduction() {
+export default function Introduction({description}) {
 	const [text, count] = useTypewriter({
 		words: [
 			"<你好 />",
@@ -30,7 +30,7 @@ export default function Introduction() {
 					<h1 className='w-2/3 md:w-full text-3xl font-bold font-mono'>
 						I'm KaLok!
 					</h1>
-					<p className='w-2/3 md:w-full font-thin md:font-normal md:text-xl'>有時學完新野或者睇完書，過一排就會發現啲記憶好模糊。所以就諗住寫下筆記放係呢到。</p>
+					<p className='w-2/3 md:w-full font-thin md:font-normal md:text-xl font-mono'>{description}</p>
 				</div>
 
 				{/* Right Part */}

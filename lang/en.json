@@ -1,0 +1,10 @@
+{
+    "home": {
+        "description": "Sometimes after learning something new or reading a book, I find that some of my memories are quite hazy. So I think it's a good idea to write down notes and keep them here.",
+        "tag_all": "All",
+        "sorting_title": "Sort",
+        "order_old": "Oldest",
+        "order_new": "Newest",
+        "quote_title": "Daily Inspirational Quote"
+    }
+}

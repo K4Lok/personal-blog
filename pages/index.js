@@ -1,6 +1,7 @@
-import {useState, useEffec} from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 import Navbar from '../components/Navbar'
 import Introduction from '../components/Introduction'
@@ -10,9 +11,11 @@ import PostCards from '../components/post/PostCards'
 import { getCategories, getPosts } from '../services'
 import { getQuote, getQuoteImage } from '../services/quotes'
 
-export default function Home({ categories, posts, imageUrl, quote }) {
+export default function Home({ categories, posts, imageUrl, quote, locale }) {
   const [filteredPosts, setFilteredPosts] = useState(posts);
   const [isLatestOrder, setIsLatestOrder] = useState(true);
+
+  const t = useTranslations('home')
 
   const categoryHandler = (selectedCategory) => {
     let newFilteredPosts = [...posts]
@@ -36,10 +39,6 @@ export default function Home({ categories, posts, imageUrl, quote }) {
     setFilteredPosts(prev => [...prev].reverse())
   }
 
-  // useEffec(() => {
-    
-  // }, []);
-
   return (
     <>
       <Head>
@@ -52,12 +51,12 @@ export default function Home({ categories, posts, imageUrl, quote }) {
       <Navbar />
 
       <main className='max-w-container mx-auto space-y-4 pt-navbar pb-navbar px-wrapper xl:px-0'>
-        <Introduction />
+        <Introduction description={t('description')}/>
         <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-10">
           {/* Category Filter Bar and PostCards Section */}
           <div className="space-y-4 grow">
             <CategoryFilter categories={categories} isLatestOrder={isLatestOrder} categoryHandler={categoryHandler} orderHandler={orderHandler}/>
-            <PostCards posts={filteredPosts}/>
+            <PostCards posts={filteredPosts} locale={locale}/>
           </div>
           {/* Side Panel */}
           <aside className='hidden lg:block basis-80'>
@@ -66,7 +65,7 @@ export default function Home({ categories, posts, imageUrl, quote }) {
               <div className="relative w-full h-80 rounded-lg overflow-hidden">
                 {/* Styles: Top bar */}
                 <div className="absolute top-0 z-10 w-full bg-blue-200/60 backdrop-blur-lg flex">
-                  <p className='px-4 py-2 text-lg font-bold text-white select-none'>每日雞湯</p>
+                  <p className='px-4 py-2 text-lg font-bold text-white select-none'>{t('quote_title')}</p>
                 </div>
                 <Image className='bg-slate-200 brightness-[60%]' src={imageUrl} width={80 * 4} height={80 * 4}/>
                 <div className="absolute inset-0 flex flex-col justify-center items-center">
@@ -105,7 +104,8 @@ export async function getStaticProps({locale}) {
       categories,
       posts,
       imageUrl,
-      quote
+      quote,
+      messages: (await import(`../lang/${locale}.json`)).default
     },
     revalidate: 60 * 60 * 24, // Revalidate once a day
   }
