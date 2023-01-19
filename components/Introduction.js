@@ -1,8 +1,10 @@
-import React from 'react'
+import { useContext } from 'react'
 import Image from 'next/image'
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
-export default function Introduction({description}) {
+import { TranslationContext } from '../context/TranslationContext'
+
+export default function Introduction() {
 	const [text, count] = useTypewriter({
 		words: [
 			"<你好 />",
@@ -18,6 +20,9 @@ export default function Introduction({description}) {
 		delaySpeed: 1000
 	})
 
+	const value = useContext(TranslationContext)
+	const { t } = value
+
 	return (
 		<section id="introduction" className="px-wrapper xl:px-0 overflow-x-hidden">
 			<div className="pt-12 pb-16 lg:py-32 flex gap-8 justify-between md:justify-center">
@@ -30,7 +35,7 @@ export default function Introduction({description}) {
 					<h1 className='w-2/3 md:w-full text-3xl font-bold font-mono'>
 						I'm KaLok!
 					</h1>
-					<p className='w-2/3 md:w-full font-thin md:font-normal md:text-xl font-mono'>{description}</p>
+					<p className='w-2/3 md:w-full font-thin md:font-normal md:text-xl font-mono'>{t('description')}</p>
 				</div>
 
 				{/* Right Part */}

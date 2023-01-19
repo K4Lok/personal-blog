@@ -10,6 +10,7 @@ import PostCards from '../components/post/PostCards'
 
 import { getCategories, getPosts } from '../services'
 import { getQuote, getQuoteImage } from '../services/quotes'
+import { TranslationContext } from '../context/TranslationContext'
 
 export default function Home({ categories, posts, imageUrl, quote, locale }) {
   const [filteredPosts, setFilteredPosts] = useState(posts);
@@ -20,7 +21,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
   const categoryHandler = (selectedCategory) => {
     let newFilteredPosts = [...posts]
 
-    if (selectedCategory === '全部') {
+    if (selectedCategory === 'all') {
       if (!isLatestOrder) newFilteredPosts = newFilteredPosts.reverse()
 
       setFilteredPosts(newFilteredPosts)
@@ -40,7 +41,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
   }
 
   return (
-    <>
+    <TranslationContext.Provider value={{t: t}}>
       <Head>
         <title>KaLok's Time Chamber - Personal Blog</title>
         <meta name="description" content="Welcome to the personal blog of Sam KaLok, a passionate web developer and tech enthusiast, from front-end to back-end development..." />
@@ -51,7 +52,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
       <Navbar />
 
       <main className='max-w-container mx-auto space-y-4 pt-navbar pb-navbar px-wrapper xl:px-0'>
-        <Introduction description={t('description')}/>
+        <Introduction/>
         <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-10">
           {/* Category Filter Bar and PostCards Section */}
           <div className="space-y-4 grow">
@@ -89,7 +90,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
           </aside>
         </div>
       </main>
-    </>
+    </TranslationContext.Provider>
   )
 }
 
