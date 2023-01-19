@@ -94,9 +94,9 @@ export default function Home({ categories, posts, imageUrl, quote }) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({locale}) {
   const categories = (await getCategories()) || []
-  const posts = (await getPosts()) || []
+  const posts = (await getPosts(locale)) || []
   const imageUrl = await getQuoteImage(600, 600, 'sky,fantastic, pure')
   const quote = await getQuote()
 

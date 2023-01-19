@@ -2,10 +2,10 @@ import { request, gql } from "graphql-request"
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
 
-export const getPosts = async () => {
+export const getPosts = async (locale) => {
 	const query = gql`
-		query Posts {
-			posts(orderBy: createdAt_DESC) {
+		query Posts($locale: Locale!) {
+			posts(orderBy: createdAt_DESC, locales: [$locale]) {
 				id
 				title
 				slug
@@ -16,9 +16,6 @@ export const getPosts = async () => {
 						hex
 					}
 				}
-				content {
-					html
-				}
 				createdAt
 				bannerImage {
 					url
@@ -27,7 +24,7 @@ export const getPosts = async () => {
 		}
   `
 
-	const result = await request(graphqlAPI, query)
+	const result = await request(graphqlAPI, query, { locale })
 
 	return result.posts
 }
@@ -50,10 +47,10 @@ export const getCategories = async () => {
 	return result.categories
 }
 
-export const getPostDetails = async (slug) => {
+export const getPostDetails = async (slug, locale) => {
 	const query = gql`
-		query PostDetails($slug: String!) {
-			post(where: {slug: $slug}) {
+		query PostDetails($slug: String!, $locale: Locale!) {
+			post(where: {slug: $slug}, locales: [$locale]) {
 				title
 				slug
 				categories {
@@ -74,7 +71,7 @@ export const getPostDetails = async (slug) => {
 		}
 	`
 
-	const result = await request(graphqlAPI, query, { slug })
+	const result = await request(graphqlAPI, query, { slug, locale })
 
 	return result.post
 }

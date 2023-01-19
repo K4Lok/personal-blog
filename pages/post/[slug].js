@@ -30,9 +30,15 @@ export default function PostDetailPage({ post }) {
     </>)
 }
 
-export async function getStaticProps({ params }) {
-    const post = await getPostDetails(params.slug)
+export async function getStaticProps({ params, locale }) {
+    const post = await getPostDetails(params.slug, locale)
     const date =  new Intl.DateTimeFormat('zh-MO', { dateStyle: 'full', timeStyle: 'short', timeZone: 'Asia/Macau' }).format(new Date(post.createdAt))
+
+    if (!post.bannerImage) {
+        post.bannerImage= {
+            url: '/fallback-banner.webp'
+        }
+    }
 
     return {
         props: {
@@ -45,16 +51,25 @@ export async function getStaticProps({ params }) {
     }
 }
 
-export async function getStaticPaths() {
-    const posts = (await getPosts()) || []
+export async function getStaticPaths({locales}) {
+    let paths = []
+    let posts = []
 
-    return {
-        paths: posts.map(post => {
+    for (const locale of locales) {
+        posts = (await getPosts(locale)) || []
+
+        let locale_posts = posts.map(post => {
             const slug = post.slug
             return {
-                params: {slug}
+                params: {slug},
+                locale
             }
-        }),
+        })
+        paths = [...paths, ...locale_posts]
+    }
+
+    return {
+        paths: paths,
         fallback: 'blocking',
     }
 }

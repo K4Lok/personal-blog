@@ -5,9 +5,16 @@ const withPWA = require('next-pwa')({
   skipWaiting: true
 })
 
+const i18nConfig = {
+  locales: ['zh', 'en'],
+  defaultLocale: 'zh',
+  localeDetection: false,
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  i18n: i18nConfig,
   images: {
     remotePatterns: [
       {
