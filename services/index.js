@@ -63,7 +63,7 @@ export const getPostDetails = async (slug, locale) => {
 					html
 				}
 				createdAt
-				bannerImage {
+				bannerImage(locales: zh) {
 					url
 				}
 				isLicenseImage
