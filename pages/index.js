@@ -63,7 +63,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
           <aside className='hidden lg:block basis-80 min-w-[20rem] shrink-0'>
             <div className="w-full flex flex-col space-y-4">
               {/* Quote Card */}
-              <div className="relative w-full h-80 rounded-lg overflow-hidden">
+              <div className="relative w-full h-80 rounded-lg overflow-hidden fix-ios-radius">
                 {/* Styles: Top bar */}
                 <div className="absolute top-0 z-10 w-full bg-blue-200/60 backdrop-blur-lg flex">
                   <p className='px-4 py-2 text-lg font-bold text-white select-none'>{t('quote_title')}</p>
