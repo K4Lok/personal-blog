@@ -47,6 +47,9 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
         <meta name="description" content="Welcome to the personal blog of Sam KaLok, a passionate web developer and tech enthusiast, from front-end to back-end development..." />
         <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://blog.samkalok.com" />
+        <link rel="alternative" href="https://blog.samkalok.com/zh" hreflang="zh" />
+        <link rel="alternative" href="https://blog.samkalok.com/en" hreflang="en" />
       </Head>
 
       <Navbar />
