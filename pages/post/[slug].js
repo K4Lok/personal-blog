@@ -11,6 +11,8 @@ export default function PostDetailPage({ post }) {
             <title>{`${post.title} | KaLok's Blog`}</title>
             <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
             <link rel="icon" href="/favicon.ico" />
+            <link rel="canonical" href={`https://blog.samkalok.com/post/${post.slug}`}/>
+            <link rel="alternative" href={`https://blog.samkalok.com/en/post/${post.slug}`} hrefLang="en"/>
         </Head>
 
         <Navbar />
@@ -44,7 +46,7 @@ export async function getStaticProps({ params, locale }) {
         props: {
             post: {
                 ...post,
-                date: date
+                date: date,
             }
         },
         revalidate: 60
