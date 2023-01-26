@@ -48,8 +48,8 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
         <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://blog.samkalok.com" />
-        <link rel="alternative" href="https://blog.samkalok.com/zh" hreflang="zh" />
-        <link rel="alternative" href="https://blog.samkalok.com/en" hreflang="en" />
+        <link rel="alternative" href="https://blog.samkalok.com/zh" hrefLang="zh" />
+        <link rel="alternative" href="https://blog.samkalok.com/en" hrefLang="en" />
       </Head>
 
       <Navbar />
