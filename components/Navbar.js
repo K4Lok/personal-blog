@@ -50,14 +50,14 @@ export default function Navbar() {
 							{
 								router.locale == 'zh'
 								? (
-									<a className='cursor-pointer active:scale-[101%] hover:brightness-110' onClick={() => languageSwitchHandler('en')}>
-									<Image priority src={'/language.svg'} alt={'switch language'} width={40} height={40} />
-								</a>
+									<button className='cursor-pointer active:scale-[101%] hover:brightness-110' onClick={() => languageSwitchHandler('en')}>
+										<Image priority src={'/language.svg'} alt={'switch language'} width={40} height={40} />
+									</button>
 								)
 								: (
-									<a className='cursor-pointer active:scale-[101%] hover:brightness-110' onClick={() => languageSwitchHandler('zh')}>
-									<Image priority src={'/language.svg'} alt={'switch language'} width={40} height={40} />
-								</a>
+									<button className='cursor-pointer active:scale-[101%] hover:brightness-110' onClick={() => languageSwitchHandler('zh')}>
+										<Image priority src={'/language.svg'} alt={'switch language'} width={40} height={40} />
+									</button>
 								)
 							}
 					</div>
