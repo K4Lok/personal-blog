@@ -28,14 +28,14 @@ export default function Introduction() {
 			<div className="pt-12 pb-16 lg:py-32 flex gap-8 justify-between md:justify-center">
 				{/* Left Part */}
 				<div className="space-y-4 md:text-center">
-					<h2 className='text-4xl font-bold md:text-5xl'>
+					<div className='text-4xl font-bold md:text-5xl'>
 						<span className="font-thin md:font-bold">{text}</span>
 						<Cursor cursorColor="#32A8EB"/>
-					</h2>
+					</div>
 					<h1 className='w-2/3 md:w-full text-3xl font-bold font-mono'>
 						I'm KaLok!
 					</h1>
-					<p className='w-2/3 md:w-full font-thin md:font-normal md:text-xl font-mono'>{t('description')}</p>
+					<h2 className='w-2/3 md:w-full font-thin md:font-normal md:text-xl font-mono'>{t('description')}</h2>
 				</div>
 
 				{/* Right Part */}
