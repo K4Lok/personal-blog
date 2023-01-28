@@ -71,7 +71,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
                 <div className="absolute top-0 z-10 w-full bg-blue-200/60 backdrop-blur-lg flex">
                   <p className='px-4 py-2 text-lg font-bold text-white select-none'>{t('quote_title')}</p>
                 </div>
-                <Image className='bg-slate-200 brightness-[60%] object-cover h-full w-full' src={imageUrl} width={80 * 4} height={80 * 4}/>
+                <Image className='bg-slate-200 brightness-[60%] object-cover h-full w-full' src={imageUrl} width={80 * 4} height={80 * 4} alt={"Inspirational Quote Background"}/>
                 <div className="absolute inset-0 flex flex-col justify-center items-center">
                   <div className="w-4/5">
                     <h4 className='text-xl font-mono font-bold text-white tracking-widest'>{quote.content}</h4>
