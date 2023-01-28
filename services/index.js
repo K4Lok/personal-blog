@@ -32,7 +32,7 @@ export const getPosts = async (locale) => {
 export const getCategories = async () => {
 	const query = gql`
 		query Categories {
-			categories(orderBy: name_ASC) {
+			categories(orderBy: name_ASC, first: 100) {
 				name
 				slug
 				color {
