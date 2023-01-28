@@ -45,7 +45,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
       <Head>
         <title>KaLok's Time Chamber - Personal Blog</title>
         <meta name="description" content="Welcome to the personal blog of Sam KaLok, a passionate web developer and tech enthusiast, from front-end to back-end development..." />
-        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+        <meta name="viewport" content="width=device-width" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://blog.samkalok.com" />
         <link rel="alternative" href="https://blog.samkalok.com/zh" hrefLang="zh" />
