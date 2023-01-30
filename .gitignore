@@ -35,3 +35,7 @@ yarn-error.log*
 **/public/workbox-*.js
 **/public/sw.js
 **/public/worker-*.js
+
+# Sitemap
+/public/sitemap*.xml
+/public/robots.txt
