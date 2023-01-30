@@ -4,6 +4,7 @@ import Image from "next/image"
 import Navbar from "../../components/Navbar"
 
 import { getPostDetails, getPosts } from "../../services"
+import { sleep } from '../../services/helper'
 
 export default function PostDetailPage({ post }) {
     return (<>
@@ -33,6 +34,7 @@ export default function PostDetailPage({ post }) {
 }
 
 export async function getStaticProps({ params, locale }) {
+    await sleep(500)
     const post = await getPostDetails(params.slug, locale)
     const date =  new Intl.DateTimeFormat(locale == 'zh' ? 'zh-mo' : locale, { dateStyle: 'full', timeStyle: 'short', timeZone: 'Asia/Macau' }).format(new Date(post.createdAt))
 
