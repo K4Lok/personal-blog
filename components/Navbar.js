@@ -36,7 +36,7 @@ export default function Navbar() {
 
 	return (
         <header>
-			<div ref={navRef} className={`fixed top-0 w-full py-wrapper bg-white/90 z-50 transition duration-500 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
+			<div ref={navRef} className={`fixed top-0 w-full py-wrapper backdrop-blur-sm bg-white/50 z-50 transition duration-500 ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
 				<div className="max-w-container mx-auto px-wrapper xl:px-0 flex justify-between items-baseline">
 					{/* Logo */}
 					<Link href={'/'}>
