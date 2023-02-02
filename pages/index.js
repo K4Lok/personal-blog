@@ -56,7 +56,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
 
       <main className='max-w-container mx-auto space-y-4 pt-navbar pb-navbar px-wrapper xl:px-0'>
         <Introduction/>
-        <div className="flex flex-col lg:flex-row lg:gap-10">
+        <div className="relative flex flex-col lg:flex-row lg:gap-10">
           {/* Category Filter Bar and PostCards Section */}
           <div className="space-y-4 min-w-0">
             <CategoryFilter categories={categories} isLatestOrder={isLatestOrder} categoryHandler={categoryHandler} orderHandler={orderHandler}/>
@@ -64,7 +64,7 @@ export default function Home({ categories, posts, imageUrl, quote, locale }) {
           </div>
           {/* Side Panel */}
           <aside className='hidden lg:block basis-80 min-w-[20rem] shrink-0'>
-            <div className="w-full flex flex-col space-y-4">
+            <div className="sticky top-10 w-full flex flex-col space-y-4">
               {/* Quote Card */}
               <div className="relative w-full h-80 rounded-lg overflow-hidden fix-ios-radius">
                 {/* Styles: Top bar */}
