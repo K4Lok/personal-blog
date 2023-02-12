@@ -27,7 +27,7 @@ export default function PostDetailPage({ post }) {
             <div className="pt-4 px-wrapper xl:px-0">
                 <p className="text-cardDate">{post.date}</p>
                 <h1 className="text-2xl font-bold">{post.title}</h1>
-                <div className="pt-4 prose md:prose-xl markdown" dangerouslySetInnerHTML={{__html: post.content.html}}></div>
+                <div className="pt-4 prose markdown" dangerouslySetInnerHTML={{__html: post.content.html}}></div>
             </div>
         </div>
     </>)
