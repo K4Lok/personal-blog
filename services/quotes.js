@@ -19,9 +19,18 @@ export const getQuoteImage = async (width, height, keyword) => {
 export const getQuote = async () => {
     const API = process.env.NEXT_PUBLIC_QUOTE_API
 
-    const raw = await fetch(API)
+    let quote
 
-    const quote = await raw.json()
+    try {
+        const raw = await fetch(API)
+        quote = await raw.json()
+    }
+    catch {
+        quote = {
+            content: 'All our dreams can come true, if we have the courage to pursue them.',
+            author: 'Walt Disney'
+        }
+    }
 
     return quote
 }
