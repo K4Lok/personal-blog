@@ -15,7 +15,7 @@ export default function CategoryFilter({ categories, isLatestOrder, categoryHand
 					</button>
 					{categories.map(category => (
 						<button onClick={() => categoryHandler(category.slug)} key={category.slug} className="px-3 py-2 rounded-full cursor-pointer active:brightness-90" style={{ backgroundColor: category.color.hex }}>
-							<p className='text-white text-sm font-bold select-none'>{category.name}</p>
+							<p className='text-white text-sm font-bold select-none whitespace-nowrap'>{category.name}</p>
 						</button>
 					))}
 				</div>
